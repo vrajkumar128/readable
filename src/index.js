@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import Header from './components/Header/Header';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
+import middleware from './middleware';
 
+// Create Redux store
+const store = createStore(reducer, middleware);
+
+// Render app
 ReactDOM.render(
-  <Header>
+  <Provider store={store}>
     <App />
-  </Header>,
+  </Provider>,
   document.getElementById('root')
- );
+);
