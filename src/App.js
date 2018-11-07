@@ -4,6 +4,7 @@ import './App.css';
 import { handleInitialData } from './actions/shared';
 import Header from './components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PostList from './components/PostList/PostList';
 
 class App extends React.PureComponent {
   // Populate Redux state tree
@@ -17,7 +18,7 @@ class App extends React.PureComponent {
         <Fragment>
           <Header />
           <Switch>
-            <Route exact path="/" />
+            <Route path="/" component={PostList} />
           </Switch>
         </Fragment>
       </Router>
@@ -25,4 +26,5 @@ class App extends React.PureComponent {
   }
 }
 
+// Connect component to Redux store
 export default connect()(App);

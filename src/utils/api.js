@@ -9,7 +9,7 @@ export const _getCategories = async () => {
     );
     if (response.ok) {
       const jsonResponse = await response.json();
-      return jsonResponse.categories;
+      return jsonResponse;
     }
   } catch (err) {
     console.error(err);
