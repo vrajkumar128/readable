@@ -3,7 +3,7 @@ const config = require('./config')
 
 let db = {}
 
-const defaultData = {
+const defaultData = [
   categories: [
       {
         name: 'react',

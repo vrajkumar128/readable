@@ -14,4 +14,4 @@ const posts = (state = {}, action) => {
     : postsReducer['default'];
 };
 
-export default posts;  
+export default posts;
