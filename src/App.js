@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import { handleInitialData } from './actions/shared';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.PureComponent {
   // Populate Redux state tree
@@ -11,8 +13,14 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      <div className="App">
-      </div>
+      <Router>
+        <Fragment>
+          <Header />
+          <Switch>
+            <Route exact path="/" />
+          </Switch>
+        </Fragment>
+      </Router>
     );
   }
 }
